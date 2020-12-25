@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   end
   
   def create
+  binding.pry
     @room = Room.find(params[:room_id])
     @message = @room.messages.new(message_params)
     if @message.save
